@@ -2,14 +2,23 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set('n', '<leader>n', vim.cmd.NvimTreeToggle)
-
+vim.keymap.set('n', '<leader>n', function()
+    local view = require"nvim-tree.view"
+    local api = require'nvim-tree.api'
+    local isFocused = string.match(vim.fn.expand('%'), 'NvimTree')
+    if view.is_visible() then
+        if isFocused then api.tree.close() else api.tree.focus() end
+    else
+        api.tree.toggle()
+    end
+end)
 
 -- OR setup with some options
 require("nvim-tree").setup({
     open_on_setup = true,
     sort_by = "case_sensitive",
     sync_root_with_cwd = true,
+    hijack_cursor = true,
     view = {
         adaptive_size = true,
         mappings = {
@@ -46,9 +55,7 @@ require("nvim-tree").setup({
         } },
     },
     actions = {
-        open_file = {
-            quit_on_open = true,
-        }
+        open_file = {}
     },
     filters = {
         dotfiles = false,
