@@ -7,6 +7,25 @@ return require('packer').startup(function(use)
     use 'dracula/vim'
 
     if not vim.g.vscode then
+        -- main one
+        use { 'ms-jpq/coq_nvim', branch = 'coq' }
+        -- 9000+ Snippets
+        use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+
+        -- lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+        -- Need to **configure separately**
+        use { 'ms-jpq/coq.thirdparty', branch = '3p' }
+        -- - shell repl
+        -- - nvim lua api
+        -- - scientific calculator
+        -- - comment banner
+        -- - etc
+
+        -- LSP
+        use 'neovim/nvim-lspconfig'
+        use 'williamboman/mason.nvim'
+        use 'williamboman/mason-lspconfig.nvim'
+
         use {
             'rose-pine/neovim',
             as = 'rose-pine',
@@ -14,33 +33,11 @@ return require('packer').startup(function(use)
                 vim.cmd('colorscheme rose-pine')
             end
         }
+
         use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use 'ThePrimeagen/harpoon'
         use 'mbbill/undotree'
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            requires = {
-                -- LSP Support
-                {'neovim/nvim-lspconfig'},
-                {'williamboman/mason.nvim'},
-                {'williamboman/mason-lspconfig.nvim'},
-
-                -- Autocompletion
-                {'hrsh7th/nvim-cmp'},
-                {'hrsh7th/cmp-buffer'},
-                {'hrsh7th/cmp-path'},
-                {'saadparwaiz1/cmp_luasnip'},
-                {'hrsh7th/cmp-nvim-lsp'},
-                {'hrsh7th/cmp-nvim-lua'},
-
-                -- Snippets
-                {'L3MON4D3/LuaSnip'},
-                {'honza/vim-snippets'},
-                -- Snippet Collection (Optional)
-                {'rafamadriz/friendly-snippets'},
-            }
-        }
         use 'wakatime/vim-wakatime'
         use {
             'mhinz/vim-startify',

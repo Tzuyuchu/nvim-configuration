@@ -16,8 +16,8 @@ map("x", "<leader>p", [["_dP]])
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Allows using jk and kj as alternative Esc
-map('i', 'jk', '<Esc>')
-map('i', 'kj', '<Esc>')
+map('i', 'jk', '<Esc><Esc>')
+map('i', 'kj', '<Esc><Esc>')
 
 map('n', 'tn', ':tabnew<Enter>')
 map('n', '<c-w>t', '<c-w>ji')

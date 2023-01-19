@@ -1,6 +1,7 @@
 require'tzuyuchu.remap'
 require'tzuyuchu.packer'
 require'tzuyuchu.settings'
+require'tzuyuchu.coq'
 
 -- set colors
 local color = 'rose-pine'
