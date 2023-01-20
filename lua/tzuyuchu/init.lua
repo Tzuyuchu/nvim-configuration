@@ -1,11 +1,10 @@
 require'tzuyuchu.remap'
 require'tzuyuchu.packer'
 require'tzuyuchu.settings'
-require'tzuyuchu.coq'
 
 -- set colors
-local color = 'rose-pine'
-vim.cmd.colorscheme(color)
+vim.cmd.colorscheme('rose-pine')
+vim.cmd.colorscheme('dracula')
 vim.g.airline_theme = 'dracula'
 
 -- WSL clipboard support

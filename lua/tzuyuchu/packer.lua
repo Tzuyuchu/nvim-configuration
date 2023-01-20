@@ -8,13 +8,13 @@ return require('packer').startup(function(use)
 
     if not vim.g.vscode then
         -- main one
-        use { 'ms-jpq/coq_nvim', branch = 'coq' }
+        -- use { 'ms-jpq/coq_nvim', branch = 'coq' }
         -- 9000+ Snippets
-        use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+        -- use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
         -- lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
         -- Need to **configure separately**
-        use { 'ms-jpq/coq.thirdparty', branch = '3p' }
+        -- use { 'ms-jpq/coq.thirdparty', branch = '3p' }
         -- - shell repl
         -- - nvim lua api
         -- - scientific calculator
@@ -22,16 +22,16 @@ return require('packer').startup(function(use)
         -- - etc
 
         -- LSP
-        use 'neovim/nvim-lspconfig'
-        use 'williamboman/mason.nvim'
-        use 'williamboman/mason-lspconfig.nvim'
+        -- use 'neovim/nvim-lspconfig'
+        -- use 'williamboman/mason.nvim'
+        -- use 'williamboman/mason-lspconfig.nvim'
+        use { 'neoclide/coc.nvim', branch = 'release' }
+        use 'honza/vim-snippets'
+        use 'dense-analysis/ale'
 
         use {
             'rose-pine/neovim',
             as = 'rose-pine',
-            config = function()
-                vim.cmd('colorscheme rose-pine')
-            end
         }
 
         use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }

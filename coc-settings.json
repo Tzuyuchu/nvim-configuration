@@ -1,0 +1,7 @@
+{
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.1/clangd_15.0.1/bin/clangd",
+  "suggest.maxCompleteItemCount": 10,
+  "snippets.ultisnips.pythonPrompt": false,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": false
+}
